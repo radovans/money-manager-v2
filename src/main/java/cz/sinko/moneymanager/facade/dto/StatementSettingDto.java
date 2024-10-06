@@ -29,6 +29,10 @@ public class StatementSettingDto {
 
     private int recipientColumn;
 
+    private int accountNumberColumn;
+
+    private int bicCodeColumn;
+
     private String noteColumn;
 
     private int amountColumn;

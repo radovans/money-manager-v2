@@ -55,6 +55,14 @@ public class StatementSetting {
     @PositiveOrZero
     private int recipientColumn;
 
+    @NotNull
+    @PositiveOrZero
+    private int accountNumberColumn;
+
+    @NotNull
+    @PositiveOrZero
+    private int bicCodeColumn;
+
     @NotBlank
     private String noteColumn;
 

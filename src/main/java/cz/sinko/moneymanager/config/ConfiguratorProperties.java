@@ -86,6 +86,10 @@ public class ConfiguratorProperties {
 
         private Integer recipientColumn;
 
+        private Integer accountNumberColumn;
+
+        private Integer bicCodeColumn;
+
         private Integer noteColumn;
 
         private Integer amountColumn;

@@ -196,6 +196,8 @@ public class ConfiguratorAutoConfiguration {
         Assert.notNull(configuratorProperties.getStatementSetting().getSkipLinesColumn(), "configurator.statement-setting.skip-lines-column must be set.");
         Assert.notNull(configuratorProperties.getStatementSetting().getDateColumn(), "configurator.statement-setting.date-column must be set.");
         Assert.notNull(configuratorProperties.getStatementSetting().getRecipientColumn(), "configurator.statement-setting.recipient-column must be set.");
+        Assert.notNull(configuratorProperties.getStatementSetting().getAccountNumberColumn(), "configurator.statement-setting.account-number-column must be set.");
+        Assert.notNull(configuratorProperties.getStatementSetting().getBicCodeColumn(), "configurator.statement-setting.bic-code-column must be set.");
         Assert.notNull(configuratorProperties.getStatementSetting().getNoteColumn(), "configurator.statement-setting.note-column must be set.");
         Assert.notNull(configuratorProperties.getStatementSetting().getAmountColumn(), "configurator.statement-setting.amount-column must be set.");
         Assert.notNull(configuratorProperties.getStatementSetting().getCurrencyColumn(), "configurator.statement-setting.currency-column must be set.");
@@ -215,6 +217,8 @@ public class ConfiguratorAutoConfiguration {
                     .skipLines((int) row.getCell(configuratorProperties.getStatementSetting().getSkipLinesColumn()).getNumericCellValue())
                     .dateColumn((int) row.getCell(configuratorProperties.getStatementSetting().getDateColumn()).getNumericCellValue())
                     .recipientColumn((int) row.getCell(configuratorProperties.getStatementSetting().getRecipientColumn()).getNumericCellValue())
+                    .accountNumberColumn((int) row.getCell(configuratorProperties.getStatementSetting().getAccountNumberColumn()).getNumericCellValue())
+                    .bicCodeColumn((int) row.getCell(configuratorProperties.getStatementSetting().getBicCodeColumn()).getNumericCellValue())
                     .noteColumn(row.getCell(configuratorProperties.getStatementSetting().getNoteColumn()).getStringCellValue())
                     .amountColumn((int) row.getCell(configuratorProperties.getStatementSetting().getAmountColumn()).getNumericCellValue())
                     .currency(row.getCell(configuratorProperties.getStatementSetting().getCurrencyColumn()).getStringCellValue())
