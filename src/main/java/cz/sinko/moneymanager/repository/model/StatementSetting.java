@@ -10,13 +10,14 @@ import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
 /**
- * Model for storing rules for statement parsing settings.
+ * Model for storing statement settings.
  *
  * @author Sinko Radovan
  */
@@ -35,7 +36,6 @@ public class StatementSetting {
     @NotBlank
     private String charset;
 
-    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_id", nullable = false)
     private Account account;
@@ -44,26 +44,24 @@ public class StatementSetting {
     private String datePattern;
 
     @NotNull
-    @Positive
+    @PositiveOrZero
     private int skipLines;
 
     @NotNull
-    @Positive
+    @PositiveOrZero
     private int dateColumn;
 
     @NotNull
-    @Positive
+    @PositiveOrZero
     private int recipientColumn;
 
-    @NotNull
-    @Positive
-    private int noteColumn;
+    @NotBlank
+    private String noteColumn;
 
     @NotNull
-    @Positive
+    @PositiveOrZero
     private int amountColumn;
 
-    @NotNull
-    @Positive
-    private int currencyColumn;
+    @NotBlank
+    private String currency;
 }

@@ -10,6 +10,7 @@ import cz.sinko.moneymanager.facade.dto.AccountDto;
 import cz.sinko.moneymanager.facade.mapper.AccountMapper;
 import cz.sinko.moneymanager.repository.AccountRepository;
 import cz.sinko.moneymanager.repository.model.Account;
+import cz.sinko.moneymanager.repository.model.Category;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -47,6 +48,19 @@ public class AccountService {
     public Account find(final Long accountId) throws ResourceNotFoundException {
         return accountRepository.findById(accountId)
             .orElseThrow(() -> ResourceNotFoundException.createWith("Account", " with id '" + accountId + "' was not found"));
+    }
+
+    /**
+     * Find account by name.
+     *
+     * @param account account name
+     * @return account
+     * @throws ResourceNotFoundException if account was not found
+     */
+    public Account find(final String account) throws ResourceNotFoundException {
+        return accountRepository.findByName(account).orElseThrow(() -> ResourceNotFoundException.createWith(
+            "Account",
+            " with name '" + account + "' was not found"));
     }
 
     /**

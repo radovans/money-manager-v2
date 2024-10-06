@@ -22,6 +22,8 @@ public class ConfiguratorProperties {
 
     private RuleProperties rule;
 
+    private StatementSettingProperties statementSetting;
+
     @Data
     public static class AccountProperties {
         private String sheetName;
@@ -64,5 +66,30 @@ public class ConfiguratorProperties {
         private Integer labelColumn;
 
         private Integer skipTransactionColumn;
+    }
+
+    @Data
+    public static class StatementSettingProperties {
+        private String sheetName;
+
+        private Integer nameColumn;
+
+        private Integer charsetColumn;
+
+        private Integer accountColumn;
+
+        private Integer datePatternColumn;
+
+        private Integer skipLinesColumn;
+
+        private Integer dateColumn;
+
+        private Integer recipientColumn;
+
+        private Integer noteColumn;
+
+        private Integer amountColumn;
+
+        private Integer currencyColumn;
     }
 }

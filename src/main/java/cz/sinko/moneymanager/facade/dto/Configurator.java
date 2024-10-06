@@ -21,4 +21,6 @@ public class Configurator {
     private Map<String, String> subcategories;
 
     private Set<RuleDto> rules;
+
+    private Set<StatementSettingDto> statementSettings;
 }
